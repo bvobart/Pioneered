@@ -17,7 +17,7 @@ This tool allows using a KY-040 rotary encoder with `Mixxx` on a Raspberry Pi. T
 First, follow the hardware instructions in `Hardware instructions.odt`.
 
 # Installation
-
+## Copying files
 Copy the following files to their respective destinations:
 
 * `knob_midi_startup.py` -> `/home/pi/`
@@ -26,6 +26,15 @@ Copy the following files to their respective destinations:
 	* If the user is not `pi` or if the Python script is located somewhere else than `/home/pi/`, then this systemd script must be edited
 * `ky040.midi.xml` -> `~/.mixxx/controllers`
 
+## Installing Python libraries
+The Python script requires the `mido` library (https://mido.readthedocs.io/en/latest/index.html) and its `rtmidi` backend.
+
+```bash
+pip3 install mido
+pip3 install python-rtmidi
+```
+
+## Starting systemd service
 Enable and start the systemd service:
 ```bash
 sudo systemctl enable ky040.service
@@ -51,6 +60,7 @@ It should return something like this:
 Jun 25 15:35:27 raspberrypi systemd[1]: Started KY040 rotary encoder driver.
 ```
 
+## Enabling MIDI controller in mixxx
 Start mixxx and enable the KY040 MIDI controller
 
 # Usage
