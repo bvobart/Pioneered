@@ -1,5 +1,14 @@
 #!/usr/bin/python
 
+"""
+Handles interrupts from GPIO pins following KY040 actions (rotating or pressing)
+Then publishes MIDI messages on a virtual MIDI port for mixxx
+
+GorgiAstro - Clément Jonglez (clement@jonglez.space)
+
+This code is largely inspired from https://blog.sharedove.com/adisjugo/index.php/2020/05/10/using-ky-040-rotary-encoder-on-raspberry-pi-to-control-volume/
+"""
+
 import mido
 import os
 from RPi import GPIO
