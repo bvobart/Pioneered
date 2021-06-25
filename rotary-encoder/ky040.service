@@ -1,0 +1,11 @@
+[Unit]
+Description=KY040 rotary encoder driver
+After=multi-user.target
+
+[Service]
+User=pi
+Type=idle
+ExecStart=/usr/bin/python3 /home/pi/knob_midi_startup.py > /home/pi/sample.log 2>&1
+
+[Install]
+WantedBy=multi-user.target
