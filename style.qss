@@ -1,15 +1,15 @@
-/* Pioneer Colours:
-
-Play button: #6ee128
-Cue button: #eb870f
-Slip button: #d73535
-Tabs on top: #c3d541
-Headers: #32323c
-Title bg: #112f5c
-Blue: #2d85cd
-White: #e5e6ea
-
-*/
+/**
+ * Pioneer Colours:
+ * 
+ * Play button: #6ee128
+ * Cue button: #eb870f
+ * Slip button: #d73535
+ * Tabs on top: #c3d541
+ * Headers: #32323c
+ * Title bg: #112f5c
+ * Blue: #2d85cd
+ * White: #e5e6ea
+ */
 
 /* DEBUG
 * {
@@ -17,8 +17,19 @@ White: #e5e6ea
 }
 /* END */
 
+/**
+ * General 
+ */
 * {
   font-family: 'Open Sans', sans-serif;
+}
+
+#Mixxx {
+  background-color: black;
+}
+
+WLabel {
+  color: #e5e6ea;
 }
 
 QMenuBar, QMenuBar::item, QMenu, QMenu::item {
@@ -27,9 +38,35 @@ QMenuBar, QMenuBar::item, QMenu, QMenu::item {
 }
 
 QMenuBar::item:pressed, QMenu::item:selected, QMenu::item:pressed {
-    background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.2);
+}
+/**/
+
+/**
+ * Tab bar at the top of the screen 
+ */
+#TabControls WPushButton {
+  background-color: black;
+  font-weight: bold;
+  margin: 10px 10%;
+  max-width: 250px;
+  text-transform: uppercase;
 }
 
+#TabControls WPushButton[value="0"] {
+  border: 2px solid gray;
+  color: gray;
+}
+
+#TabControls WPushButton[value="1"] {
+  border: 2px solid #c3d541;
+  color: #c3d541;
+}
+/**/
+
+/**
+ * Decks
+ */
 #Deck {
   border: 1px solid transparent;
   border-radius: 2px;
@@ -64,6 +101,14 @@ QMenuBar::item:pressed, QMenu::item:selected, QMenu::item:pressed {
 #DeckHeader {
   background-color: #112f5c;
   padding: 2px;
+}
+
+#DeckOverview {
+  margin: 50% 0;
+}
+
+#DeckTitleNote {
+  margin: 0 2px;
 }
 
 #DeckTitle, #DeckTitleNote {
@@ -107,6 +152,40 @@ QMenuBar::item:pressed, QMenu::item:selected, QMenu::item:pressed {
   qproperty-layoutAlignment: 'AlignHCenter | AlignTop';
 }
 
+#TrackNumberWrapper, #DeckChannelTitleWrapper {
+  qproperty-layoutAlignment: 'AlignHCenter | AlignVCenter';
+}
+
+#TrackNumberTitle {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+#TrackNumber {
+  font-size: 20px;
+  font-weight: bold;
+}
+/**/
+
+/**
+ * BeatFX (Effects section)
+ */
+#BeatFX_Container {
+  border: 2px solid #32323c;
+  margin-left: 10px;
+  qproperty-layoutAlignment: 'AlignCenter | AlignTop';
+}
+
+#BeatFX_Header {
+  background-color: #32323c;
+}
+
+#BeatFX_Title {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 WEffectSelector {
   background-color: transparent;
   color: #2d85cd;
@@ -125,29 +204,11 @@ WEffectSelector {
 #EffectToggle[value="1"] {
   color: #2d85cd;
 }
+/**/
 
-#TrackNumberWrapper, #DeckChannelTitleWrapper {
-  qproperty-layoutAlignment: 'AlignHCenter | AlignVCenter';
-}
-
-#TrackNumberTitle {
-  font-size: 12px;
-  text-transform: uppercase;
-}
-
-#TrackNumber {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-#DeckTitleNote {
-  margin: 0 2px;
-}
-
-#DeckOverview {
-  margin: 50% 0;
-}
-
+/**
+ * Library (Browse)
+ */
 #LibraryWrapper QScrollBar {
   background-color: gray;
 }
@@ -212,30 +273,33 @@ WEffectSelector {
   color: #e5e6ea;
 }
 
-#Mixxx {
-  background-color: black;
-}
-
-WLabel {
-  color: #e5e6ea;
-}
-
-#BeatFX_Container {
-  border: 2px solid #32323c;
-  margin-left: 10px;
-  qproperty-layoutAlignment: 'AlignCenter | AlignTop';
-}
-
-#BeatFX_Header {
-  background-color: #32323c;
-}
-
-#BeatFX_Title {
-  font-size: 14px;
+#SearchBox {
+  background-color: #112f5c;
+  border-radius: 0;
+  font-size: 20px;
   font-weight: bold;
+  padding: 4px;
   text-transform: uppercase;
 }
 
+#SidebarContainer {
+  background-color: #112f5c;
+}
+
+#SidebarButton {
+  background-color: rgba(0,0,0,0.2);
+  border: 2px solid lightgray;
+  border-radius: 4px;
+  color: lightgray;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 4px;
+}
+/**/
+
+/**
+ * Samplers
+ */
 #Sampler {
   background-color: #32323c;
   border: 2px solid #d73535;
@@ -259,30 +323,11 @@ WLabel {
 #SamplersDeck1, #SamplersDeck2 {
   margin: 0 4px;
 }
+/**/
 
-#SearchBox {
-  background-color: #112f5c;
-  border-radius: 0;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 4px;
-  text-transform: uppercase;
-}
-
-#SidebarContainer {
-  background-color: #112f5c;
-}
-
-#SidebarButton {
-  background-color: rgba(0,0,0,0.2);
-  border: 2px solid lightgray;
-  border-radius: 4px;
-  color: lightgray;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 4px;
-}
-
+/**
+ * Waveforms
+ */
 #WaveformInfo {
   margin-right: 10px;
 }
@@ -318,21 +363,4 @@ WLabel {
   margin: 4px;
   padding: -6px -6px -3px -2px;
 }
-
-#TabControls WPushButton {
-  background-color: black;
-  font-weight: bold;
-  margin: 10px 10%;
-  max-width: 250px;
-  text-transform: uppercase;
-}
-
-#TabControls WPushButton[value="0"] {
-  border: 2px solid gray;
-  color: gray;
-}
-
-#TabControls WPushButton[value="1"] {
-  border: 2px solid #c3d541;
-  color: #c3d541;
-}
+/**/
