@@ -172,7 +172,7 @@ QMenuBar::item:pressed, QMenu::item:selected, QMenu::item:pressed {
  */
 #BeatFX_Container {
   border: 2px solid #32323c;
-  margin-left: 10px;
+  margin-left: 4px;
   qproperty-layoutAlignment: 'AlignCenter | AlignTop';
 }
 
@@ -186,6 +186,16 @@ QMenuBar::item:pressed, QMenu::item:selected, QMenu::item:pressed {
   text-transform: uppercase;
 }
 
+#BeatFX_Unit[highlight="0"] {
+  padding: 1px;
+  border: 1px solid #32323c;
+}
+
+#BeatFX_Unit[highlight="1"] {
+  padding: 1px;
+  border: 1px solid #2d85cd;
+}
+
 WEffectSelector {
   background-color: transparent;
   color: #2d85cd;
@@ -193,6 +203,10 @@ WEffectSelector {
   font-weight: bold;
   padding: 4px;
   text-transform: uppercase;
+}
+
+#EffectMeter {
+  padding: 0px 1px 0px 1px;
 }
 
 #EffectToggle {
